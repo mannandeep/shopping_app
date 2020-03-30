@@ -39,7 +39,7 @@ class Cart(object):
         
 
         product_ids = self.cart.keys()
-        #get the product objects and add them to the cart
+        
         products = Product.objects.filter(id__in=product_ids)
 
         cart = self.cart.copy()
@@ -53,7 +53,7 @@ class Cart(object):
 
     def __len__(self):
 
-        #count items in the cart
+       
 
         return sum(item['quantity'] for item in self.cart.values())
 
